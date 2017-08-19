@@ -12,7 +12,7 @@ $http({
     $scope.contacts=JSON.parse(data.data);
 });
 
-            $scope.addnewcontact = function()
+            $scope.addnewcontact = function(){
                 return {
                     name: $scope.newName,
                     tel:$scope.newTel
