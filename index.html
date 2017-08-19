@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+
+
+<title>My Contacts</title>
+</head>
+
+<body ng-app="mycontacts" ng-controller="myCtrl">
+    <div class="container">
+        <div class="title">
+            <h1>My Contacts</h1>     
+            </div>
+            <div class="search_section">
+            <form class="form-horizontal">
+                <div class="form-group has-contacts has-feedback">
+                    <div class="col-sm-5">
+                        <input type="text"  name="search" ng-model ="test" class="form-control">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                                   
+                    </div>
+                      <a href="" ng-click="shownewcontact=shownewcontact = ! shownewcontact"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                  </br>
+          
+                </div>
+            </form> 
+
+                      <div class="" ng-show="shownewcontact">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <span>Name：</span>
+                        <input type="text" class="form-control" ng-model="newName" >
+                    </div>
+                    <div class="form-group">
+                        <span>Phone Number：</span>
+                        <input type="text" class="form-control" ng-model="newTel" >
+                    </div> 
+                    <input  type="button" class="addButton" value="Add" ng-click="addItem();shownewcontact=false;">       
+                </form>            
+          </div>
+
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                     
+                    </tr>
+                   </thead>
+                   <tbody>
+                    <tr ng-repeat="x in contacts | filter:test">
+                        <td><span ng-hide="showMe($index)">{{x.name}}</span><input text="text"class="form-control input-sm" ng-model="x.name" ng-show="showMe($index)"></td>
+                        <td><span ng-hide="showMe($index)">{{x.tel}}</span><input text="text" class="form-control input-sm" ng-model="x.tel" ng-show="showMe($index)"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        
+        </div>   
+
+            
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" type="text/javascript"></script>
+    <script src="js/mycontacts.js" type="text/javascript"></script>
+
+    </body>
+</html>

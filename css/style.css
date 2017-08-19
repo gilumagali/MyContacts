@@ -1,0 +1,38 @@
+    .container{
+        width: 80%;
+        margin: 50px auto;
+    }
+    i.fa.fa-plus-circle {
+    font-size: 20px;
+    color: green;
+    margin-top: 5px;
+}
+    td:nth-of-type(1){
+        width: 30%;
+    }
+    td:nth-of-type(2){
+        width: 35%;
+    }
+    input[type="text"]{
+        width:100%;
+    }
+    
+    
+    i.fa.fa-search {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+input.addButton {
+    border-radius: 4px;
+    background-color: green;
+    color: #fff;
+    box-shadow: none;
+    border: none;
+    width: 50px;
+    margin-left: 30px;
+}
+    @media (min-width: 768px) and (max-width: 992px){
+        
+        }  
+    } 
