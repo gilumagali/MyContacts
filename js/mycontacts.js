@@ -9,18 +9,10 @@ $http({
     url: "https://gilscontacts.azurewebsites.net/api/HttpTriggerJS1"
 })
 .then(function(data) {
-    console.log(data);
+    $scope.contacts=JSON.parse(data.data);
 });
 
-
-
-           $scope.contacts = [{name:"Tom",tel:"012-345-6789"},
-                {name:"Jerry",tel:"012-345-6789"},
-                {name:"Philip",tel:"012-345-6789"}];
-
-  
-
-            $scope.addnewcontact = function(){
+            $scope.addnewcontact = function()
                 return {
                     name: $scope.newName,
                     tel:$scope.newTel
